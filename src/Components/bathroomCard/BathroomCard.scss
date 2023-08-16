@@ -1,0 +1,23 @@
+.bathroomCard {
+    border: solid lightgray 1px;
+    width: 340px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    &__img {
+        width: 340px;
+        img {
+            width: inherit;
+        }
+    }
+
+    &__name {
+
+        font-weight: 600;
+        font-size: 1.2em;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        
+    }
+}
