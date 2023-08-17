@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './BathroomSearchBar.scss'
 
 function BathroomSearchBar({ bathrooms,setFilteredBathrooms }) {
     const [filterValue, setFilterValue] = useState('');

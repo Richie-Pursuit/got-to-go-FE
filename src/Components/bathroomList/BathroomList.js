@@ -27,7 +27,7 @@ useEffect(() => {
         <div className = 'bathroomList'>
             <h1 className = 'bathroomList__title'> Bathrooms </h1>
             <div className='bathroomList__searchbar'>
-                <BathroomSearchBar bathrooms={bathrooms} setFilteredBathrooms={setFilteredBathrooms} />
+                <BathroomSearchBar bathrooms = {bathrooms} setFilteredBathrooms = {setFilteredBathrooms} />
             </div>
 
             <div className = 'bathroomList__container' >
