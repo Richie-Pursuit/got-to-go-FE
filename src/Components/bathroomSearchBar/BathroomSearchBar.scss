@@ -1,14 +1,30 @@
 .bathroomSearchBar {
 
     &__input {
-        background-color: aqua;
         padding: 5px;
+        backdrop-filter: blur(4px) saturate(180%);
     
     }
     input{
         width:350px;
         height: 30px;
         border: none;
-        font-size: 14px;
+        border-bottom:2px solid silver;
+        font-size: 20px;
+        border-radius: 60px;
+        align-items: center;
+        padding: 10px 20px;
+        flex: 1;
+        background: transparent;
+        color:#090909 ;
+        cursor: pointer;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+      
+            /* Update border color and background color on focus */
+            &:focus {
+              border-color: dodgerblue;
+              background-color: rgba(0, 0, 255, 0.1);
+            }
+          
     }
 }
