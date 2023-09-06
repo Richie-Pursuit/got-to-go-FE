@@ -1,12 +1,22 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import BathroomList from './Components/bathroomList/BathroomList';
+import Index from "./Pages/Index";
+import ShowBathroom from "./Pages/ShowBathroom";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      < BathroomList />
-    </div>
+   <div> 
+      <Router>
+      {/* <NavBar /> */}
+      <Routes>
+        <Route path="/bathrooms" element={<Index />} />
+        <Route path="/bathrooms/:id" element={<ShowBathroom />} />
+      </Routes>
+    </Router>
+  </div>
   );
 }
 
