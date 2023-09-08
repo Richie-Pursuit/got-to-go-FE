@@ -12,7 +12,7 @@ const BathroomDetail = () => {
     const navigate = useNavigate();
 
     return (
-        <body>
+       
         <div className='bathroomDetail'>
             <h1 className = 'bathroomDetail__name'> Bathroom TITLE</h1>
             <div className = 'bathroomDetail__img'>
@@ -23,7 +23,7 @@ const BathroomDetail = () => {
             </div>
 
         </div>
-        </body>
+        
     );
 };
 

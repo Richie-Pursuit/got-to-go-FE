@@ -1,0 +1,51 @@
+/* NavBar.css */
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Set your desired maximum width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-item {
+    margin-right: 20px; /* Spacing between menu items */
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #FF5733; /* Hover color */
+}
