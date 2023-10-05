@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 import axios from 'axios';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import './BathroomDetail.scss'
@@ -9,9 +9,24 @@ const API = process.env.REACT_APP_API_URL;
 const BathroomDetail = () => {
 
     const { id } = useParams();
-    const [product, setProduct] = useState([]);
+    const [bathroom, setBathroom] = useState([]);
     const navigate = useNavigate();
+
+
+    useEffect(()=>{
+        axios
+        .get(`${API}/bathrooms/${id}`)
+        .then((response) => {
+            console.log(response.data);
+            setBathroom(response.data);
+          })
+          .catch((c) => {
+            console.warn("catch", c);
+          });
+      }, [id]);
  
+
+      const {name, address, } = bathroom
 
     return (
         
@@ -19,9 +34,9 @@ const BathroomDetail = () => {
             <ImageUpload />
             
         <div className='bathroomDetail__grid'>
-            <h1 className='bathroomDetail__name'>Bathroom TITLE</h1>
+            <h1 className='bathroomDetail__name'>{name}</h1>
             <div className='bathroomDetail__address'>
-                Crotona Avenue, East 181 Street
+                {address}
             </div>
             <div className='bathroomDetail__bio'>
                 BIO I didn't end up going to see Regina but speaking with her on the phone was an absolute delight. I called in an emergency when my friend getting married in two days had a terrible experience getting lashes at another salon. Trying…
