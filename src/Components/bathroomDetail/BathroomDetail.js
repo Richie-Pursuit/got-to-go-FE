@@ -26,7 +26,7 @@ const BathroomDetail = () => {
       }, [id]);
  
 
-      const {name, address, } = bathroom
+      const {name, address, image } = bathroom
 
     return (
         
@@ -42,7 +42,8 @@ const BathroomDetail = () => {
                 BIO I didn't end up going to see Regina but speaking with her on the phone was an absolute delight. I called in an emergency when my friend getting married in two days had a terrible experience getting lashes at another salon. Trying…
             </div>
             <div className='bathroomDetail__img'>
-                <img src='https://media.architecturaldigest.com/photos/5d2f3540dea3bc0008636368/16:9/w_2580,c_limit/After-Photo-7.jpg' alt='test' />
+            <img src={image} alt='test' />
+                {/* <img src='https://media.architecturaldigest.com/photos/5d2f3540dea3bc0008636368/16:9/w_2580,c_limit/After-Photo-7.jpg' alt='test' /> */}
             </div>
         </div>
     </div>
