@@ -1,4 +1,4 @@
-/* BathroomNewForm.scss */
+
 
 .form-container {
     display: flex;
@@ -49,15 +49,15 @@ button {
     background-color: #e96345;
     color: white;
     cursor: pointer;
-    width: calc(50% - 5px); /* Reduce width for both buttons */
+    width: calc(50% - 5px); 
     font-size: 16px;
     transition: background-color 0.3s ease;
 
 }
 
 button {
-    background-color: #333232; /* Red color for 'Nevermind' button */
-    margin-left: 5px; /* Add margin to create space between buttons */
+    background-color: #333232; 
+    margin-left: 5px; 
 }
 
 input[type="submit"]:hover,

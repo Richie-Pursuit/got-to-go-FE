@@ -1,0 +1,57 @@
+// Perks.scss
+
+.perks {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+
+    .perks__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        .title {
+            text-align: center;
+        }
+
+        .hours-container {
+            background-color: #3498db;
+            border-radius: 8px;
+            overflow: hidden;
+
+            .hours {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+
+                .open,
+                .close {
+                    flex: 1;
+                    text-align: center;
+                    color: #fff;
+
+              
+                    &:not(:last-child)::after {
+                        content: "";
+                        width: 2px;
+                        height: 100%;
+                        background-color: #fff;
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .perks__accessibility,
+        .perks__baby_changing,
+        .perks__family_room,
+        .perks__public {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    }
+}

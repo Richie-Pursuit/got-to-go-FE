@@ -1,0 +1,32 @@
+// ShowBathroom.scss
+
+.showBathroom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+  
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    flex: 0.3; 
+    background-color: #f4f4f4;
+}
+
+.perks {
+    margin-bottom: 20px;
+}
+
+.bathroomMap {
+    flex: 1;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rightColumn {
+    flex: 0.7; 
+    margin-left: 20px; 
+    background-color: #f4f4f4;
+}

@@ -1,26 +1,24 @@
-/* NavBar.css */
 
-/* Reset default styles */
 * {
-    margin: 0;
+    margin-top: 0px;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navbar styles */
+
 .navbar {
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-    font-size: 18px;
+    background-color: #4282ba;
+    color: #fff;
+    font-size: 16px; 
     font-weight: bold;
-    padding: 10px 0;
+    padding: 10px 0; 
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Set your desired maximum width */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -37,7 +35,7 @@
 }
 
 .navbar-item {
-    margin-right: 20px; /* Spacing between menu items */
+    margin-right: 20px; 
 }
 
 .navbar-link {
@@ -47,5 +45,70 @@
 }
 
 .navbar-link:hover {
-    color: #FF5733; /* Hover color */
+    color: #FF5733; 
+}
+
+.add-new-button {
+    display: inline-block;
+    width: 33px; 
+    height: 30px; 
+    background-color: #fff;
+    border-radius: 8px; 
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px; 
+    color: #43bc49;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 18px; 
+}
+
+
+.add-new-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.add-new-button:hover::after {
+    content: "Add New"; /* Text on hover */
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    line-height: 1;
+    color: #333;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Exaggerated border radius for a circular shape */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }
+  
+  .logo-image:hover {
+    transform: scale(1.05); /* Scale the image slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow on hover */
+  }
+  
+
+.logo-image2 {
+    width:100px; 
+    height: auto;  
+    border-radius: 8px; 
+    margin-left: 10px; 
+    transition: none;  
+    box-shadow: none; 
+}
+
+.logo-image2:hover {
+    transform: none; 
+    box-shadow: none; 
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './BathroomEditForm.scss'
+
 const API = process.env.REACT_APP_API_URL;
 
 const BathroomEditForm = () => {
@@ -15,7 +17,6 @@ const BathroomEditForm = () => {
         latitude: "",
         longitude: "",
         image: ""
-
     })
 
     const updateBathroom = (updatedBathroom) => {
@@ -34,93 +35,94 @@ const BathroomEditForm = () => {
 
     const handleTextChange = (event) => {
         setBahtroom({ ...bathroom, [event.target.id]: event.target.value });
-      };
+    };
 
-
-      useEffect(() => {
+    useEffect(() => {
         axios.get(`${API}/bathrooms/${id}`)
         .then((response) => setBahtroom(response.data),
         (error) => navigate(`/not-found`)
         )
-      }, [id, navigate])
+    }, [id, navigate])
 
-
-      const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         updateBathroom(bathroom, id);
-      };
-
+    };
 
     return (
-        <div>
+        <div className="form-container">
             <div className="bathroomEditForm">
-                <form onSubmit= {handleSubmit}>
-                <label htmlFor="name">Name:</label>
-                    <input
-                    id="name"
-                    value={bathroom.name}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Name of Product"
-                    required
-                    />
-                <label htmlFor="address">Address:</label>
-                    <input
-                    id="address"
-                    value={bathroom.address}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="address of bathroom"
-                    required
-                    />
-
-
-                <label htmlFor="city">City:</label>
-                    <select
-                    id="city"
-                    name="city"
-                    value={bathroom.city}
-                    placeholder="City"
-                    onChange={handleTextChange}
-                    >
-
-                    <option value="">Select a borough</option>
-                    <option value="New York">Manhattan</option>
-                    <option value="Brooklyn">Brooklyn</option>
-                    <option value="Queens">Queens</option>
-                    <option value="Bronx">Bronx</option>
-                    <option value="Staten Island">Staten Island</option>
-
-
-                    </select>
-
-                    <label htmlFor="zipcode">Zipcode:</label>
-                    <input
-                    id="zipcode"
-                    value={bathroom.zipcode}
-                    type="number" 
-                    onChange={handleTextChange}
-                    placeholder="zipcode of bathroom"
-                    required
-                    />
-
-                    <label htmlFor="image">Image Link:</label>
+                <h3>Edit Bathroom</h3>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Name:</label>
                         <input
-                        id="image"
-                        type="text"
-                        pattern="http[s]*://.+"
-                        required
-                        value={bathroom.image}
-                        placeholder="http://"
-                        onChange={handleTextChange}
+                            id="name"
+                            value={bathroom.name}
+                            type="text"
+                            onChange={handleTextChange}
+                            placeholder="Name of Product"
+                            required
                         />
-
-                    <br />
-                            <input type="submit" />
-                        </form>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="address">Address:</label>
+                        <input
+                            id="address"
+                            value={bathroom.address}
+                            type="text"
+                            onChange={handleTextChange}
+                            placeholder="Address of bathroom"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="city">City:</label>
+                        <select
+                            id="city"
+                            name="city"
+                            value={bathroom.city}
+                            placeholder="City"
+                            onChange={handleTextChange}
+                        >
+                            <option value="">Select a borough</option>
+                            <option value="New York">Manhattan</option>
+                            <option value="Brooklyn">Brooklyn</option>
+                            <option value="Queens">Queens</option>
+                            <option value="Bronx">Bronx</option>
+                            <option value="Staten Island">Staten Island</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="zipcode">Zipcode:</label>
+                        <input
+                            id="zipcode"
+                            value={bathroom.zipcode}
+                            type="number" 
+                            onChange={handleTextChange}
+                            placeholder="Zipcode of bathroom"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="image">Image Link:</label>
+                        <input
+                            id="image"
+                            type="text"
+                            pattern="http[s]*://.+"
+                            required
+                            value={bathroom.image}
+                            placeholder="http://"
+                            onChange={handleTextChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input type="submit" />
                         <Link to={`/bathrooms/${id}`}>
-                        <button>Nevermind!</button>
-                   </Link>
+                            <button>Nevermind!</button>
+                        </Link>
+                    </div>
+                </form>
             </div>
         </div>
     );

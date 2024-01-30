@@ -5,6 +5,7 @@ import ShowBathroom from "./Pages/ShowBathroom";
 import NavBar from "./Components/navBar/NavBar";
 import EditForm from "./Pages/EditForm";
 import NewBathroomForm from "./Pages/NewBathroomForm";
+import Home from "./Pages/Home";
 
 
 
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <NavBar />
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="/bathrooms" element={<Index />} />
         <Route path="/bathrooms/new" element={<NewBathroomForm />} />
         <Route path="/bathrooms/:id" element={<ShowBathroom />} />

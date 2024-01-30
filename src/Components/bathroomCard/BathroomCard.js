@@ -11,7 +11,7 @@ const BathroomCard = ( {bathroom} ) => {
     const {name, address, id} = bathroom
     return (
         <div className = 'bathroomCard'>
-            <Link to={`/bathrooms/${id}`}>
+            <Link to={`/bathrooms/${id}`} className='LinkStyle'>
            <div className = 'bathroomCard__img'>
                 <img src = 'https://media.architecturaldigest.com/photos/5d2f3540dea3bc0008636368/16:9/w_2580,c_limit/After-Photo-7.jpg'></img>
             </div>

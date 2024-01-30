@@ -12,7 +12,6 @@ function ImageUpload() {
     const formData = new FormData();
     formData.append("image", selectedFile);
 
-    // Update the Axios request URL to include the complete backend URL
     axios.post("http://localhost:3003/upload", formData).then((response) => {
       console.log(response.data);
     });

@@ -1,4 +1,3 @@
-
 import './BathroomList.scss';
 import BathroomSearchBar from '../bathroomSearchBar/BathroomSearchBar';
 import BathroomCard from '../bathroomCard/BathroomCard';
