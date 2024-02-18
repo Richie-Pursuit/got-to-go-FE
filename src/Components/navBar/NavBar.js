@@ -18,9 +18,6 @@ const NavBar = () => {
         </Link>
 
         {/* Integrated SearchBar inside NavBar */}
-        <div className='search-bar'>
-          <BathroomSearchBar />
-        </div>
 
         <ul className='navbar-menu'>
           <li className='navbar-item'>
