@@ -1,12 +1,13 @@
 
-
-  .landing-page{
-    background: #e7f9e0;
-  }
+  
   .park-photos-container{
     display: flex;
-    margin: 20px;
- 
+    justify-content: center;
+    align-items: center;
+    background: #e7f9e0;
+    padding-left: 150px;
+    padding-top: 30px;
+
   }
   .park-photos-container img{
     border: 1px solid rgb(188, 188, 188);
@@ -14,16 +15,45 @@
   }
 
  .paired-photos img{
-    width: 350px;
-    height: 230px;
+    width: 380px;
+    height: 250px;
     border-radius: 5px;
     
   }
  .toilet-image img{
-    width:700px;
-    max-height: 700px;
-    margin-right:10px;
+    max-width:800px;
+    height: 600px;
+    border-radius: 5px;
+  }
+  .toilet-image{
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+
+  .toilet-content {
+    width: 70%;
+    height: 30%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 7%; 
+    left: 24%; 
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .toilet-content h1, p{
+    color:  antiquewhite;
   }
   .landing2{
-    margin-bottom:5px;
+    margin-bottom:6px;
   }
+
+
+      // position:relative;
+    // left:140px;
+    // top:20px;

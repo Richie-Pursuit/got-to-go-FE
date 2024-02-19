@@ -9,23 +9,24 @@ import './LandingPage.scss';
 const LandingPage = () => {
   return (
     <div className='landing-page'>
-      {/* <div>
-        <h1>Got2Go</h1>
-        <p>Your go-to app for finding bathrooms in NYC!</p>
-        <Link to="/bathrooms">
-          <button>Get Started</button>
-        </Link>
-      </div> */}
       <div className='park-photos-container'>
         <div className='toilet-image'>
             <img src={toilet} alt="toilet" />
+            <div className='toilet-content'>
+                <h1 className='toilet-title'>Find Bathrooms</h1>
+                <p className='toilet-text'>Find public bathrooms at your fingertips</p>
+            </div>
         </div>
         <div className='paired-photos'>
             <img className='landing2' src={landing2} alt="landing2" />
             <img src={centralPark} alt="centralPark" />
         </div>
-   
-        
+      </div>
+
+    </div>
+  );
+};
+
         {/* <div>
           <h2>Search for Bathrooms</h2>
           <ul>
@@ -34,11 +35,12 @@ const LandingPage = () => {
             <li>View precise locations on the map.</li>
           </ul>
         </div> */}
-      </div>
-
-    </div>
-  );
-};
-
+              {/* <div>
+        <h1>Got2Go</h1>
+        <p>Your go-to app for finding bathrooms in NYC!</p>
+        <Link to="/bathrooms">
+          <button>Get Started</button>
+        </Link>
+      </div> */}
 
 export default LandingPage;
