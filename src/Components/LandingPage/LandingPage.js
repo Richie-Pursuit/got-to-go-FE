@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import centralPark from '../../Images/centralPark.jpeg';
 import landing2 from '../../Images/landing2.png';
 import toilet from '../../Images/toilet.jpeg';
-import paper from '../../Images/paper.jpeg';
+
 import './LandingPage.scss'; 
 
 const LandingPage = () => {
@@ -22,25 +22,27 @@ const LandingPage = () => {
             <img src={centralPark} alt="centralPark" />
         </div>
       </div>
+      <section className='second-section-container'>
+        <div className='second-section-text'>
+            <h2>Navigate to the perfect toilet</h2>
+            <p>
+      Got2Go features{' '}
+      <span style={{ color: 'limegreen' }}>pin point</span>
+      {' '}navigation to the toilet of your dreams..
+    </p>
+        </div>
+        <div className='second-section-banner-container'>
+        <h2>Got-2-Go? Why wait?</h2>
+            <p>Use our optimal search feature to find bathrooms based on name, borough or zipcode.</p>
+            <button className='begin-bttn'>Begin Now</button>
+        </div>
+
+      </section>
 
     </div>
   );
 };
 
-        {/* <div>
-          <h2>Search for Bathrooms</h2>
-          <ul>
-            <li>Find nearby public and private restrooms.</li>
-            <li>Search by borough, name, or zipcode.</li>
-            <li>View precise locations on the map.</li>
-          </ul>
-        </div> */}
-              {/* <div>
-        <h1>Got2Go</h1>
-        <p>Your go-to app for finding bathrooms in NYC!</p>
-        <Link to="/bathrooms">
-          <button>Get Started</button>
-        </Link>
-      </div> */}
+
 
 export default LandingPage;

@@ -1,59 +1,137 @@
 
-  
-  .park-photos-container{
+  .landing-page{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #e7f9e0;
-    padding-left: 150px;
-    padding-top: 30px;
+    flex-direction: column;
+    background: rgb(251, 251, 238);
+  }
+  .park-photos-container{
+    display: flex;
+    justify-content: center;
+    // background: #e7f9e0;
+    // padding-left: 150px;
+    // padding-top: 30px;
 
   }
   .park-photos-container img{
     border: 1px solid rgb(188, 188, 188);
+    display: flex;
+  
+    
  
   }
 
  .paired-photos img{
     width: 380px;
-    height: 250px;
+    height: 275px;
     border-radius: 5px;
-    
+    margin: 10px; 
+  }
+  .paired-photos{
+    margin-top: 10px;
   }
  .toilet-image img{
-    max-width:800px;
-    height: 600px;
+    max-width:750px;
+    height: 560px;
     border-radius: 5px;
+    margin: 20px;
   }
   .toilet-image{
     position: relative;
     overflow: hidden;
-    margin-right: 15px;
   }
 
   .toilet-content {
-    width: 70%;
-    height: 30%;
+    width: 50%;
+    height: 20%;
     overflow: hidden;
     position: absolute;
     bottom: 7%; 
-    left: 24%; 
+    left: 35%; 
     background-color: rgba(255, 255, 255, 0.3);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
   }
 
-  .toilet-content h1, p{
-    color:  antiquewhite;
-  }
+
   .landing2{
     margin-bottom:6px;
   }
+// .....................SECOND-SECTION....................................//
+
+.second-section-container{
+    width: 100%;
+    // background: red;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.second-section-text {
+    font-size: 1.5rem;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(../../Images/gps.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: calc(90% - 10px) top;
+    width: 85%;
+    // background:yellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 50px;
+    
+}
 
 
-      // position:relative;
-    // left:140px;
-    // top:20px;
+.second-section-banner-container{
+    background-image: url(../../Images/paper.jpeg);
+    width: 85%;
+    padding: 50px;
+    max-height: 35vh;
+    background-size: cover;
+    background-position: 60%;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+.second-section-banner-container{
+    color: rgb(208, 218, 226);
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+}
+.second-section-banner-container h2{
+    font-size: 2rem;
+}
+.second-section-banner-container p{
+    font-size: 1.1rem;
+}
+
+.begin-bttn{
+    background: red;
+    width: 140px;
+    height: 35px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-left: 50px;
+    padding: 2px;
+    position: relative;
+    // margin-top: 10px;
+    left: 200px;
+    
+
+}
+
