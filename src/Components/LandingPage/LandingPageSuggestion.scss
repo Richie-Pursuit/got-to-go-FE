@@ -1,0 +1,35 @@
+.landing-card-container{
+    // background: red;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 3px; 
+    max-width: 1200px; 
+    margin: 20px; 
+    margin-bottom: 30px;
+}
+.landing-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    /* Other styles for card content */
+    margin: 5px;
+    // background: bisque;
+    
+}
+.landing-card-content img {
+    width: 150px;
+    height: 20vh;
+    clip-path: circle();
+    
+}
+
+.landing-card-content h2 {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.landing-card-content p{
+    font-style: italic;
+}

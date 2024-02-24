@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import centralPark from '../../Images/centralPark.jpeg';
 import landing2 from '../../Images/landing2.png';
 import toilet from '../../Images/toilet.jpeg';
+import LandingPageSuggestion from './LandingPageSuggestion';
 
 import './LandingPage.scss'; 
 
@@ -38,6 +39,12 @@ const LandingPage = () => {
         </div>
 
       </section>
+      <section>
+        <LandingPageSuggestion />
+      </section>
+      <footer>
+        FOOTER
+      </footer>
 
     </div>
   );
