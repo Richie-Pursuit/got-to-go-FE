@@ -1,23 +1,29 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 import './BathroomCard.scss'
-import axios from 'axios';
 
-const API = process.env.REACT_APP_API_URL;
+// const API = process.env.REACT_APP_API_URL;
 
-const BathroomCard = ( {bathroom} ) => {
+const BathroomCard = ({ bathroom }) => {
+    const { name, address, id, image } = bathroom;
 
-
-    const {name, address, id} = bathroom
     return (
-        <div className = 'bathroomCard'>
+        <div className='bathroomCard'>
             <Link to={`/bathrooms/${id}`} className='LinkStyle'>
-           <div className = 'bathroomCard__img'>
-                <img src = 'https://media.architecturaldigest.com/photos/5d2f3540dea3bc0008636368/16:9/w_2580,c_limit/After-Photo-7.jpg'></img>
+            <div className='bathroomCard__img'>
+                {image === "" ? (
+                    <img
+                    src="https://res.cloudinary.com/dgkkgldcc/image/upload/v1714971700/r5cdkqbnumc84vitwl7k.jpg"
+                    alt={name}
+                    />
+                ) : (
+                    <img src={image} alt={name} />
+                )}
             </div>
-           <div className = 'bathroomCard__name'> {name} </div>
-           <div className = 'bathroomCard__address'> {address} </div>
-           </Link>
+
+                <div className='bathroomCard__name'> {name} </div>
+                <div className='bathroomCard__address'> {address} </div>
+            </Link>
         </div>
     );
 };

@@ -27,7 +27,7 @@ function LandingPageSuggestion(props) {
         };
 
         fetchData();
-    }, []); // Empty dependency array to fetch data only once
+    }, []); 
 
     const displayedBathrooms = bathrooms.slice(0, 8); // Limit to 8 bathrooms when displaying
 

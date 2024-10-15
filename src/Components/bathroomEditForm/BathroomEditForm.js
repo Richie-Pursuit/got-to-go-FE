@@ -49,6 +49,10 @@ const BathroomEditForm = () => {
         updateBathroom(bathroom, id);
     };
 
+    const handleImageChange = (event) => {
+        setBahtroom({ ...bathroom, image: event.target.files[0] }); // Save the selected image file
+    };
+
     return (
         <div className="form-container">
             <div className="bathroomEditForm">
@@ -105,15 +109,13 @@ const BathroomEditForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="image">Image Link:</label>
+                        <label htmlFor="image">Upload Image:</label>
                         <input
                             id="image"
-                            type="text"
-                            pattern="http[s]*://.+"
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
                             required
-                            value={bathroom.image}
-                            placeholder="http://"
-                            onChange={handleTextChange}
                         />
                     </div>
                     <div className="form-group">

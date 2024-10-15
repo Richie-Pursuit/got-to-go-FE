@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './BathroomSearchBar.scss';
 
 function BathroomSearchBar({ bathrooms, setFilteredBathrooms }) {
     const [filterValue, setFilterValue] = useState('');
     const [cityFilter, setCityFilter] = useState(''); 
+    const [searchPerformed, setSearchPerformed] = useState(false); 
     
     const filterBathrooms = (value, city) => {
         const filtered = bathrooms.filter(bathroom => {
@@ -16,6 +17,7 @@ function BathroomSearchBar({ bathrooms, setFilteredBathrooms }) {
             );
         });
         setFilteredBathrooms(filtered);
+        setSearchPerformed(true); 
     };
 
     const handleTitleFilterChange = (e) => {
@@ -33,6 +35,29 @@ function BathroomSearchBar({ bathrooms, setFilteredBathrooms }) {
         filterBathrooms(filterValue, selectedCity);
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            filterBathrooms(filterValue, cityFilter);
+        }
+    };
+
+    const handleBackButtonClick = () => {
+        setSearchPerformed(false); // Reset search performed 
+        setFilteredBathrooms(bathrooms); // Set filteredBathrooms back to the original list of bathrooms
+        setFilterValue(''); // Clear filterValue
+        setCityFilter(''); // Clear cityFilter
+        window.location.reload(); // Refresh the page
+    };
+
+    useEffect(() => {
+        if (!searchPerformed) {
+            // Reset filters and filtered results when search is reset
+            setFilteredBathrooms([]);
+            setFilterValue('');
+            setCityFilter('');
+        }
+    }, [searchPerformed, setFilteredBathrooms]);
+
     return (
         <div className='bathroomSearchBar'>
             <div className='bathroomSearchBar__input'>
@@ -40,6 +65,7 @@ function BathroomSearchBar({ bathrooms, setFilteredBathrooms }) {
                     type='text'
                     value={filterValue}
                     onChange={handleTitleFilterChange}
+                    onKeyDown={handleKeyPress} // Add event listener for Enter key
                     placeholder='name or zipcode...'
                 />
                 <select value={cityFilter} onChange={handleCityFilterChange}>
@@ -51,6 +77,7 @@ function BathroomSearchBar({ bathrooms, setFilteredBathrooms }) {
                     <option value='Staten Island'>Staten Island</option>
                 </select>
                 <button onClick={handleSearchClick}>Search</button>
+                {searchPerformed && <button onClick={handleBackButtonClick}>Back</button>}
             </div>
         </div>
     );

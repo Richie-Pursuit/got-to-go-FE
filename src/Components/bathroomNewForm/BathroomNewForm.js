@@ -13,31 +13,53 @@ const BathroomNewForm = () => {
         address: "",
         city: "",
         zipcode: "",
-        image: ""
-    })
-
-    const addBathroom = (newBathroom) => {
-        axios
-        .post(`${API}/bathrooms`, newBathroom)
-        .then(
-            () => {
-                console.log("addBathroom")
-                navigate(`/bathrooms`)
-            },
-            (err) => console.error(err)
-        )
-        .catch((c) => console.warn("catch", c))
-    }
+        image: null
+    });
 
     const handleTextChange = (event) => {
         setBathroom({ ...bathroom, [event.target.id]: event.target.value });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        addBathroom(bathroom);
+        try {
+            const formData = new FormData();
+            formData.append('name', bathroom.name);
+            formData.append('address', bathroom.address);
+            formData.append('city', bathroom.city);
+            formData.append('zipcode', bathroom.zipcode);
+            formData.append('image', bathroom.image);
+    
+            console.log("Form Data:", formData); // Log form data
+    
+            await addBathroom(formData);
+            navigate(`/bathrooms`);
+        } catch (error) {
+            console.error(error);
+        }
     };
+    
+    
+      
 
+    const handleImageChange = (event) => {
+        setBathroom({ ...bathroom, image: event.target.files[0] });
+    };
+    
+
+    const addBathroom = async (formData) => {
+        try {
+            console.log("Sending request to backend..."); 
+            await axios.post(`${API}/bathrooms`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log("Request successful!"); // Log after successful request
+        } catch (error) {
+            console.error("Error:", error); // Log errors
+        }
+    };
     return (
         <div className="form-container">
             <div className="bathroomNewForm">
@@ -94,16 +116,15 @@ const BathroomNewForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="image">Image Link:</label>
+                        <label htmlFor="image">Image:</label>
                         <input
                             id="image"
-                            type="text"
-                            pattern="http[s]*://.+"
-                            required
-                            value={bathroom.image}
-                            placeholder="http://"
-                            onChange={handleTextChange}
-                        />
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                           
+                            />
+
                     </div>
                     <div className="form-group">
                         <input type="submit" />

@@ -1,11 +1,74 @@
-
-
 .bathroomList {
-    &__container {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr)); 
-        gap: 10px; 
-        max-width: 1200px; 
-        margin: auto; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  
+    &__title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-}
+  
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    &__empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      padding: 2rem;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+    }
+  
+    &__loadMore {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #3498db;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+  
+      &:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+    }
+  }
+  
+  // Add some responsive adjustments
+  @media (max-width: 768px) {
+    .bathroomList {
+      padding: 1rem;
+  
+      &__title {
+        font-size: 2rem;
+      }
+  
+      &__container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+    }
+  }

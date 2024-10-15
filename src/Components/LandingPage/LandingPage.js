@@ -4,6 +4,7 @@ import centralPark from '../../Images/centralPark.jpeg';
 import landing2 from '../../Images/landing2.png';
 import toilet from '../../Images/toilet.jpeg';
 import LandingPageSuggestion from './LandingPageSuggestion';
+import ImageUpload from '../imageUpload/ImageUpload';
 
 import './LandingPage.scss'; 
 
@@ -35,16 +36,13 @@ const LandingPage = () => {
         <div className='second-section-banner-container'>
         <h2>Got-2-Go? Why wait?</h2>
             <p>Use our optimal search feature to find bathrooms based on name, borough or zipcode.</p>
-            <button className='begin-bttn'>Begin Now</button>
+            <Link to="/bathrooms" className="begin-bttn">Begin Now</Link> 
         </div>
 
       </section>
       <section>
         <LandingPageSuggestion />
       </section>
-      <footer>
-        FOOTER
-      </footer>
 
     </div>
   );
