@@ -9,24 +9,24 @@
 .navbar {
     background-color: #4282ba;
     color: #fff;
-    font-size: 16px; 
+    font-size: 18px; 
     font-weight: bold;
-    padding: 10px 0; 
+    padding: 15px 0; 
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; 
+    max-width: 1300px; 
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
 }
 
 .navbar-logo {
     text-decoration: none;
     color: #fff;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .navbar-menu {
@@ -35,7 +35,7 @@
 }
 
 .navbar-item {
-    margin-right: 20px; 
+    margin-right: 25px; 
 }
 
 .navbar-link {
@@ -50,17 +50,17 @@
 
 .add-new-button {
     display: inline-block;
-    width: 33px; 
-    height: 30px; 
+    width: 38px; 
+    height: 35px; 
     background-color: #fff;
-    border-radius: 8px; 
+    border-radius: 10px; 
     text-align: center;
-    line-height: 25px;
-    font-size: 20px; 
+    line-height: 30px;
+    font-size: 24px; 
     color: #43bc49;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 18px; 
+    margin-top: 20px; 
 }
 
 
@@ -76,7 +76,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     color: #333;
 }
@@ -86,7 +86,7 @@
   }
   
   .logo-image {
-    width: 50px; /* Adjust the width as needed */
+    width: 60px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Exaggerated border radius for a circular shape */
     transition: transform 0.3s ease; /* Smooth transition for the hover effect */
@@ -100,10 +100,10 @@
   
 
 .logo-image2 {
-    width:100px; 
+    width: 120px; 
     height: auto;  
-    border-radius: 8px; 
-    margin-left: 10px; 
+    border-radius: 10px; 
+    margin-left: 15px; 
     transition: none;  
     box-shadow: none; 
 }
