@@ -128,13 +128,16 @@
     border: none;
     margin-left: 50px;
     padding: 2px;
-    padding-left: 10px;
     position: relative;
     text-decoration: none;
     color: whitesmoke;
     // margin-top: 10px;
     left: 200px;
     
-
+    /* Center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
