@@ -5,6 +5,7 @@ $text-color: #333;
 $border-radius: 8px;
 $transition-speed: 0.3s;
 $back-button-color: #e74c3c;
+$search-button-hover-color: rgb(78, 200, 78);
 
 .bathroomSearchBar {
   max-width: 800px;
@@ -84,6 +85,7 @@ $back-button-color: #e74c3c;
       &:hover {
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba($primary-color, 0.4);
+        background-color: $search-button-hover-color;
 
         &::before {
           left: 100%;
@@ -121,20 +123,20 @@ $back-button-color: #e74c3c;
 @media (max-width: 768px) {
   .bathroomSearchBar {
     &__input {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
 
       input[type="text"],
-      select {
+      select,
+      button {
         width: 100%;
         margin: 0.5rem 0;
       }
 
       .search-button,
       .back-button {
-        flex: 0 1 auto;
-        margin: 0.5rem 0.25rem;
+        flex: 1 1 auto;
+        margin: 0.5rem 0;
       }
     }
   }
